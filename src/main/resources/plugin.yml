@@ -1,0 +1,26 @@
+name: XRayLogz
+version: 1.0.0
+main: com.lyxxis.xraylogz.XRayLogz
+api-version: 1.20
+author: lyxxis
+description: Advanced ore mining logger with Discord integration
+
+commands:
+  xraylogz:
+    description: Main XRayLogz command
+    usage: /xraylogz <reload|version|toggle>
+    permission: xraylogz.admin
+
+permissions:
+  xraylogz.staff:
+    description: Allows receiving ore mining notifications
+    default: op
+  xraylogz.admin:
+    description: Allows using admin commands
+    default: op
+  xraylogz.*:
+    description: Wildcard permission for all XRayLogz features
+    default: op
+    children:
+      xraylogz.staff: true
+      xraylogz.admin: true

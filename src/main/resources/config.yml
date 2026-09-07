@@ -1,0 +1,58 @@
+# XRayLogz Configuration File
+
+# Discord webhook settings
+discord:
+  enabled: true
+  webhook-url: "YOUR_WEBHOOK_URL_HERE"
+  username: "XRayLogz"
+  avatar-url: ""
+  embed-color: "#FF5555"
+
+# Ore mining detection settings
+ores:
+  # List of ores to track. Comment out ores you don't want to track.
+  tracked-ores:
+    - "coal_ore"
+    - "deepslate_coal_ore"
+    - "iron_ore"
+    - "deepslate_iron_ore"
+    - "gold_ore"
+    - "deepslate_gold_ore"
+    - "copper_ore"
+    - "deepslate_copper_ore"
+    - "diamond_ore"
+    - "deepslate_diamond_ore"
+    - "emerald_ore"
+    - "deepslate_emerald_ore"
+    - "lapis_ore"
+    - "deepslate_lapis_ore"
+    - "redstone_ore"
+    - "deepslate_redstone_ore"
+    - "ancient_debris"
+    - "nether_gold_ore"
+    - "quartz_ore"
+
+# Version checking settings
+version-check:
+  enabled: true
+  github-repo: "lyxxis/XRayLogz"
+  check-interval-minutes: 30
+
+# Mining tracking settings
+tracking:
+  # Minimum vein size to log (set to 1 to log all ores)
+  min-vein-size: 1
+  # Log to in-game staff chat
+  log-to-staff: true
+  # Log to Discord
+  log-to-discord: true
+  # Track deepslate variants separately
+  track-deepslate-variants: true
+
+# Messages
+messages:
+  prefix: "&8[&cXRayLogz&8] "
+  reload: "&aConfiguration reloaded successfully!"
+  no-permission: "&cYou don't have permission to use this command!"
+  update-available: "&aA new version is available: &e{version}"
+  latest-version: "&aYou are running the latest version!"
