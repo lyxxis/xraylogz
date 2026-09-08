@@ -8,7 +8,7 @@ description: Advanced ore mining logger with Discord integration
 commands:
   xraylogz:
     description: Main XRayLogz command
-    usage: /xraylogz <reload|version|toggle>
+    usage: /xraylogz <reload|version>
     permission: xraylogz.admin
 
 permissions:

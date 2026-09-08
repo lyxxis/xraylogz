@@ -27,7 +27,6 @@ public class XRayLogzCommand implements CommandExecutor {
             sender.sendMessage(plugin.getPrefix() + ChatColor.YELLOW + "Available commands:");
             sender.sendMessage(ChatColor.GRAY + "  /xraylogz reload - Reload configuration");
             sender.sendMessage(ChatColor.GRAY + "  /xraylogz version - Check for updates");
-            sender.sendMessage(ChatColor.GRAY + "  /xraylogz toggle - Toggle notifications for yourself");
             return true;
         }
 
@@ -37,9 +36,6 @@ public class XRayLogzCommand implements CommandExecutor {
                 break;
             case "version":
                 handleVersion(sender);
-                break;
-            case "toggle":
-                handleToggle(sender);
                 break;
             default:
                 sender.sendMessage(plugin.getPrefix() + ChatColor.RED + "Unknown command. Use /xraylogz for help.");
@@ -57,21 +53,5 @@ public class XRayLogzCommand implements CommandExecutor {
     private void handleVersion(CommandSender sender) {
         plugin.getVersionChecker().checkForUpdates();
         sender.sendMessage(plugin.getPrefix() + ChatColor.YELLOW + "Checking for updates...");
-    }
-
-    private void handleToggle(CommandSender sender) {
-        if (!(sender instanceof Player)) {
-            sender.sendMessage(plugin.getPrefix() + ChatColor.RED + "This command can only be used by players!");
-            return;
-        }
-
-        Player player = (Player) sender;
-        if (plugin.getStaffOnline().contains(player.getUniqueId())) {
-            plugin.getStaffOnline().remove(player.getUniqueId());
-            sender.sendMessage(plugin.getPrefix() + ChatColor.YELLOW + "You will no longer receive mining notifications.");
-        } else {
-            plugin.getStaffOnline().add(player.getUniqueId());
-            sender.sendMessage(plugin.getPrefix() + ChatColor.GREEN + "You will now receive mining notifications.");
-        }
     }
 }

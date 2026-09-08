@@ -139,9 +139,9 @@ public class MiningListener implements Listener {
 
         String formattedMessage = ChatColor.translateAlternateColorCodes('&', message);
 
-        plugin.getStaffOnline().forEach(uuid -> {
-            Player staff = plugin.getServer().getPlayer(uuid);
-            if (staff != null && staff.isOnline() && staff.hasPermission("xraylogz.staff")) {
+        // Send to all online players with the permission
+        plugin.getServer().getOnlinePlayers().forEach(staff -> {
+            if (staff.hasPermission("xraylogz.staff") && !staff.getUniqueId().equals(player.getUniqueId())) {
                 staff.sendMessage(formattedMessage);
             }
         });
