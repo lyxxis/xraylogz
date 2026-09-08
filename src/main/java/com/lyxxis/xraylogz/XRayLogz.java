@@ -55,6 +55,7 @@ public final class XRayLogz extends JavaPlugin {
         if (versionChecker != null) {
             versionChecker.cancel();
         }
+        Bukkit.getScheduler().cancelTasks(this);
         Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "[XRayLogz] Plugin disabled!");
     }
 
